@@ -1,0 +1,51 @@
+.header-europe{display:flex;align-items:center;gap:11px;flex-shrink:0}.header-europe>img{width:54px;height:36px;display:block}.header-europe>span{font:500 23px/1.1 Arial,sans-serif;letter-spacing:-.6px}.header-europe small{display:block;font:9px/1.2 'DM Sans',Arial,sans-serif;letter-spacing:.3px;margin-top:4px;opacity:.75}#intro .header-europe{color:#f6f2df}#podcast .header-europe{color:#003399}#intro .intro-stage{height:calc(100svh - 131px);min-height:620px}#podcast{min-height:100svh;display:flex;flex-direction:column}#podcast>main{flex:1}.site-header nav a[aria-current="page"]{color:#b54a26}.site-header{gap:25px}.site-header nav{gap:24px}.episodes{width:100%}.about{min-height:65svh;align-content:center}.dimension-portal{position:fixed;inset:0;z-index:1000;overflow:hidden;background:#071014}.dimension-portal canvas{display:block;width:100%;height:100%}.dimension-caption{position:absolute;left:0;right:0;top:72%;text-align:center;color:#f3eee1;font:10px 'Space Grotesk',Arial,sans-serif;letter-spacing:4px;opacity:0;text-shadow:0 0 12px #000}.dimension-glow{position:absolute;inset:0;background:#e9e4d9;opacity:0;pointer-events:none}.entering-tv #scene{position:fixed;inset:0;z-index:20}.entering-tv .intro-stage{overflow:visible}.entering-tv .intro-footer{visibility:hidden}@media(max-width:700px){.header-europe{gap:8px}.header-europe>img{width:42px;height:28px}.header-europe>span{font-size:19px}.header-europe small{font-size:7px}.site-header{flex-wrap:wrap;justify-content:space-between;height:auto;min-height:122px;padding:15px 0;gap:12px}.site-header nav{order:3;flex-basis:100%;justify-content:center;gap:30px;padding-top:10px}.site-header .header-europe{margin-left:auto}.dimension-caption{font-size:8px;letter-spacing:2px}}@media(max-width:560px){#intro .intro-stage{height:calc(100svh - 120px);min-height:570px}.header-europe{gap:7px}.header-europe>img{width:36px;height:24px}.header-europe>span{font-size:17px}.header-europe small{font-size:6px}.school-brand strong{font-size:13px}.school-brand>img{width:38px;height:38px}.school-brand{gap:7px}}@media(prefers-reduced-motion:reduce){.arrived #podcast{animation:none}}
+
+/* Entry fills the space released by removing its caption and footer. */
+#intro .intro-stage{height:calc(100svh - 86px)}
+/* Podcast home uses the same green and light text as the entry menu. */
+.podcast-home .site-header{background:#293b34;color:#f5f0e4;margin:0;padding-left:4.5%;padding-right:4.5%;border-bottom-color:#ffffff20}
+.podcast-home #podcast .site-header .header-europe{color:#f6f2df}
+.podcast-home .site-header nav a[aria-current="page"]{color:#edb48b}
+.podcast-home .site-header nav a:hover{color:#edb48b}
+@media(max-width:700px){.podcast-home .site-header{padding:15px 6%}}
+@media(max-width:560px){#intro .intro-stage{height:calc(100svh - 75px)}}
+
+.podcast-home .site-header nav{gap:34px}
+.podcast-home .site-header nav a{font-size:19px;font-weight:500;padding:10px 0}
+.podcast-home .site-footer{background:#000;color:#f3f1e9;display:grid;grid-template-columns:1fr auto 1fr;gap:32px;padding:30px 6%;align-items:center}
+.podcast-home .site-footer .municipal-logo{grid-column:2;grid-row:1;display:block;background:#fff;border-radius:3px;overflow:hidden;line-height:0}
+.podcast-home .municipal-logo img{width:270px;height:auto;display:block}
+.podcast-home .site-footer .footer-back{grid-column:3;grid-row:1;text-align:right;font-size:13px}
+@media(max-width:700px){.podcast-home .site-header nav{gap:30px}.podcast-home .site-header nav a{font-size:18px}.podcast-home .site-footer{grid-template-columns:1fr auto;gap:25px}.podcast-home .site-footer .municipal-logo{grid-column:1;grid-row:2;justify-self:start}.podcast-home .site-footer .footer-back{grid-column:2;grid-row:1}.podcast-home .municipal-logo img{width:235px}}
+@media(max-width:400px){.podcast-home .site-header nav{gap:24px}.podcast-home .site-header nav a{font-size:17px}}
+
+.podcast-home .site-footer .municipal-thanks{grid-column:2;grid-row:1;justify-self:center;background:#000;color:#fff}
+.podcast-home .municipal-thanks>p{display:block;grid-column:auto;margin:0 0 12px;font-size:13px;line-height:1.3;color:#fff}
+.podcast-home .site-footer .municipal-thanks .municipal-logo{display:flex;align-items:center;gap:14px;background:#000;color:#fff;border-radius:0;overflow:visible;text-align:left;line-height:1.2}
+.podcast-home .municipal-thanks .municipal-logo img{width:48px;height:65px;object-fit:contain;flex-shrink:0}
+.podcast-home .municipal-name{display:flex;flex-direction:column;gap:4px;font-family:Arial,sans-serif}
+.podcast-home .municipal-name>span{font-size:11px;letter-spacing:.3px;color:#e7594b}
+.podcast-home .municipal-name>strong{font-size:14px;font-weight:500;letter-spacing:.2px;line-height:1.3;color:#fff}
+@media(max-width:700px){.podcast-home .site-footer .municipal-thanks{grid-column:1 / -1;grid-row:2;justify-self:start}.podcast-home .municipal-name>strong{font-size:13px}}
+
+/* Podcast cover: supplied school exterior, with a readable text overlay. */
+.podcast-home .podcast-hero{max-width:none;width:100%;min-height:640px;padding:70px 6%;gap:7%;background-image:linear-gradient(90deg,rgba(8,25,20,.83) 0%,rgba(8,25,20,.61) 46%,rgba(8,25,20,.24) 100%),url('assets/fachada-newton-salas.png');background-position:center,center 52%;background-size:cover;background-repeat:no-repeat;color:#fff7e9}
+.podcast-home .hero-copy .eyebrow{color:#f5e6cc;text-shadow:0 1px 5px #0006}
+.podcast-home .hero-copy h1{font-size:clamp(48px,5.6vw,84px);line-height:1.03;letter-spacing:-3.4px;margin:30px 0 32px;text-shadow:0 2px 18px #0004}
+.podcast-home .hero-copy h1 em{color:#ffb183}
+.podcast-home .hero-copy .dark-button{margin-top:0;background:#f7f1e6;color:#25382e;font-weight:600;border:1px solid #fff5}
+.podcast-home .hero-copy .dark-button:hover{background:#fff}
+.podcast-home .site-header nav{gap:30px}
+.podcast-home .site-header nav a{border:1px solid #ffffffbd;border-radius:999px;padding:11px 22px;white-space:nowrap;transition:background .2s,border-color .2s}
+.podcast-home .site-header nav a:hover{background:#ffffff13;border-color:#fff;color:#fff}
+.podcast-home .site-header nav a[aria-current="page"]{background:#ffffff0e;color:#ffd5b8;border-color:#fff}
+@media(max-width:1050px) and (min-width:701px){.podcast-home .site-header{min-height:150px;height:auto;flex-wrap:wrap;padding-top:15px;padding-bottom:15px;gap:14px}.podcast-home .site-header nav{order:3;flex-basis:100%;justify-content:center;gap:30px}.podcast-home .site-header .header-europe{margin-left:auto}}
+@media(max-width:700px){.podcast-home .site-header{min-height:140px}.podcast-home .site-header nav{gap:15px}.podcast-home .site-header nav a{font-size:16px;padding:9px 17px}.podcast-home .podcast-hero{padding:48px 6% 52px;min-height:0;gap:40px;background-position:center,59% center;background-image:linear-gradient(180deg,rgba(8,25,20,.78),rgba(8,25,20,.52)),url('assets/fachada-newton-salas.png')}.podcast-home .hero-copy h1{font-size:61px;letter-spacing:-2.7px;margin-bottom:27px}}
+@media(max-width:380px){.podcast-home .site-header nav{gap:11px}.podcast-home .site-header nav a{font-size:15px;padding:9px 15px}.podcast-home .hero-copy h1{font-size:53px}}
+@media(max-width:700px){.podcast-home .podcast-hero{display:flex;flex-direction:column;align-items:stretch}}
+.podcast-home .studio-photo{color:var(--ink)}
+
+/* Compact footer; municipal mark indented to the first i in Agradecimientos. */
+.podcast-home .site-footer{padding-top:17px;padding-bottom:17px}
+.podcast-home .municipal-thanks>p{margin-bottom:8px}
+.podcast-home .site-footer .municipal-thanks .municipal-logo{margin-left:44px}
