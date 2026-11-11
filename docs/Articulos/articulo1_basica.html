@@ -6,16 +6,17 @@
     <title>¿Cómo es una clase en FPB? | IES Newton Salas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-main: #232d29;
-            --bg-header: #1b2320;
-            --bg-card: #1c2522;
-            --text-primary: #ffffff;
-            --text-secondary: #9da8a4;
-            --accent-coral: #e07a5f;
-            --font-family: 'Plus Jakarta Sans', sans-serif;
+            --bg-dark: #1e2926;
+            --bg-card: #273531;
+            --text-light: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent-peach: #fca5a5;
+            --accent-orange: #f97316;
+            --border-color: #374151;
+            --font-main: 'Plus Jakarta Sans', sans-serif;
         }
 
         * {
@@ -25,188 +26,224 @@
         }
 
         body {
-            background-color: var(--bg-main);
-            color: var(--text-primary);
-            font-family: var(--font-family);
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: var(--font-main);
             line-height: 1.6;
+            padding: 0;
+            margin: 0;
         }
 
         /* Header Navigation */
         header {
-            background-color: var(--bg-header);
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            padding: 1rem 2rem;
+            align-items: center;
+            padding: 1.5rem 3rem;
+            background-color: rgba(30, 41, 38, 0.95);
             position: sticky;
             top: 0;
             z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .logo-area {
+        .logo-container {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 12px;
         }
 
-        .logo-badge {
-            background-color: #ffffff;
-            color: #000000;
-            font-weight: 700;
-            font-size: 0.65rem;
-            line-height: 1.1;
+        .logo-box {
+            background: #fff;
+            color: #000;
+            font-weight: 800;
+            font-size: 0.8rem;
             padding: 4px 6px;
             border-radius: 4px;
+            line-height: 1;
             text-transform: uppercase;
         }
 
-        .logo-text {
-            display: flex;
-            flex-direction: column;
+        .site-title {
             font-size: 0.9rem;
-            font-weight: 700;
+            font-weight: 600;
             line-height: 1.1;
         }
 
-        .logo-text span {
-            font-size: 0.7rem;
-            color: var(--text-secondary);
+        .site-title span {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
             font-weight: 400;
         }
 
         nav {
             display: flex;
-            gap: 0.75rem;
+            gap: 1rem;
         }
 
-        .nav-link {
-            color: var(--text-primary);
+        .nav-btn {
+            color: var(--text-light);
             text-decoration: none;
-            padding: 0.4rem 1.2rem;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            border-radius: 20px;
-            font-size: 0.85rem;
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+            border: 1px solid var(--border-color);
+            font-size: 0.9rem;
             transition: all 0.2s ease;
         }
 
-        .nav-link:hover, .nav-link.active {
-            background-color: rgba(255, 255, 255, 0.15);
-            border-color: #ffffff;
+        .nav-btn.active, .nav-btn:hover {
+            border-color: var(--text-light);
+            background-color: rgba(255, 255, 255, 0.05);
         }
 
-        .erasmus-badge {
+        .erasmus-flag {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 8px;
             font-size: 0.9rem;
-            font-weight: 600;
+            font-weight: 500;
         }
 
-        .flag-eu {
-            width: 24px;
-            height: 16px;
+        .flag-icon {
+            width: 28px;
+            height: 18px;
             background-color: #003399;
-            border-radius: 2px;
             position: relative;
+            border-radius: 2px;
         }
 
-        /* Hero Banner */
+        /* Hero Section */
         .hero {
             position: relative;
-            height: 380px;
-            background: linear-gradient(to right, rgba(27, 35, 32, 0.9), rgba(27, 35, 32, 0.4)), 
-                        url('https://podcast.erasmusiesnewtonsalas.blog/img/fachada.jpg') center/cover no-repeat;
+            min-height: 50vh;
             display: flex;
-            align-items: flex-end;
-            padding: 3rem 4rem;
+            align-items: center;
+            padding: 4rem 3rem;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.35) contrast(1.1);
+            z-index: 1;
         }
 
         .hero-content {
-            max-width: 700px;
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
         }
 
-        .subtitle-tag {
-            color: var(--accent-coral);
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            display: flex;
+        .badge {
+            display: inline-flex;
             align-items: center;
             gap: 6px;
-            margin-bottom: 0.5rem;
+            color: var(--accent-orange);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
         }
 
-        .subtitle-tag::before {
-            content: "•";
-            font-size: 1.2rem;
+        .badge::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent-orange);
+            border-radius: 50%;
         }
 
         .hero-title {
-            font-size: 2.8rem;
+            font-size: 3.5rem;
             font-weight: 700;
-            line-height: 1.15;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
         }
 
-        .hero-title em {
+        .hero-title span {
             font-style: italic;
-            color: var(--accent-coral);
+            color: var(--accent-peach);
             font-weight: 400;
         }
 
-        /* Main Content Container */
+        /* Article Main Content */
         main {
             max-width: 800px;
-            margin: -2rem auto 4rem;
-            position: relative;
-            z-index: 10;
-            padding: 0 1.5rem;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 5rem;
         }
 
         .article-card {
             background-color: var(--bg-card);
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 2.5rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .article-content p {
-            font-size: 1.05rem;
-            color: #d1d5db;
+        .featured-img-container {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .featured-img-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .article-body {
+            font-size: 1.1rem;
+            color: #e5e7eb;
+        }
+
+        .article-body p {
             margin-bottom: 1.5rem;
         }
 
-        .highlight-section {
-            background-color: rgba(255, 255, 255, 0.03);
-            border-left: 3px solid var(--accent-coral);
-            padding: 1rem 1.25rem;
+        .highlight-box {
+            background-color: rgba(252, 165, 165, 0.08);
+            border-left: 4px solid var(--accent-peach);
+            padding: 1.25rem 1.5rem;
             margin: 1.5rem 0;
             border-radius: 0 8px 8px 0;
         }
 
-        .highlight-section strong {
-            color: var(--text-primary);
+        .highlight-box h3 {
+            font-size: 1.1rem;
+            color: var(--accent-peach);
+            margin-bottom: 0.5rem;
         }
 
         footer {
             text-align: center;
             padding: 2rem;
-            color: var(--text-secondary);
-            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         @media (max-width: 768px) {
             header {
-                flex-direction: column;
-                gap: 1rem;
+                padding: 1rem 1.5rem;
             }
             .hero {
-                height: 280px;
-                padding: 2rem 1.5rem;
+                padding: 3rem 1.5rem;
             }
             .hero-title {
-                font-size: 2rem;
+                font-size: 2.4rem;
             }
             .article-card {
                 padding: 1.5rem;
@@ -217,47 +254,54 @@
 <body>
 
     <header>
-        <div class="logo-area">
-            <div class="logo-badge">IES<br>NEWTON<br>SALAS</div>
-            <div class="logo-text">
+        <div class="logo-container">
+            <div class="logo-box">IES<br>NEWTON<br>SALAS</div>
+            <div class="site-title">
                 <span>IES</span>
                 Newton Salas
             </div>
         </div>
         <nav>
-            <a href="#" class="nav-link active">Inicio</a>
-            <a href="#" class="nav-link">Episodios</a>
-            <a href="#" class="nav-link">El podcast</a>
+            <a href="#" class="nav-btn">Inicio</a>
+            <a href="#" class="nav-btn active">Episodios</a>
+            <a href="#" class="nav-btn">El podcast</a>
         </nav>
-        <div class="erasmus-badge">
-            <div class="flag-eu"></div>
+        <div class="erasmus-flag">
+            <div class="flag-icon"></div>
             Erasmus+
         </div>
     </header>
 
     <section class="hero">
+        <img src="imagen2.jpg" alt="Aulas FPB IES Newton Salas" class="hero-bg">
         <div class="hero-content">
-            <div class="subtitle-tag">IES Newton Salas</div>
-            <h1 class="hero-title">¿Cómo es una clase <em>en FPB?</em></h1>
+            <div class="badge">IES Newton Salas</div>
+            <h1 class="hero-title">¿Cómo es una clase <span>en FPB?</span></h1>
         </div>
     </section>
 
     <main>
         <article class="article-card">
-            <div class="article-content">
-                <p>Yo me levanto, me ducho, desayuno, y me voy hacia el bus (voy con un colega pero siempre se queda dormido). Voy a primera en bus, nos reímos un rato en clase, xq hay muy buen rollito en clase.</p>
+            <div class="featured-img-container">
+                <img src="imagen2.jpg" alt="Alumnos trabajando en clase de FPB">
+            </div>
 
-                <div class="highlight-section">
-                    <p>Luego en <strong>Redes</strong> hacemos unos trabajos (sin AI), solemos estar muuucho tiempo en <em>Packet Tracer</em>, es una aplicación principalmente para conectar ordenadores, switch, routers etc... todo esto nos lo enseñó <strong>Elisa</strong>.</p>
+            <div class="article-body">
+                <p>Yo me levanto, me ducho, desayuno y me voy hacia el bus (voy con un colega pero siempre se queda dormido el hdlgp). Voy a primera en bus, nos reímos un rato en clase, porque hay muy buen rollito en clase.</p>
+
+                <div class="highlight-box">
+                    <h3>Redes informáticas</h3>
+                    <p>Luego en <strong>Redes</strong> hacemos unos trabajos (sin AI). Solemos estar mucho tiempo en <em>Packet Tracer</em>, que es una aplicación principalmente para conectar ordenadores, switches, routers, etc. Todo esto nos lo enseñó <strong>Elisa</strong>.</p>
                 </div>
 
-                <div class="highlight-section">
-                    <p>Luego en <strong>OACE</strong> estamos haciendo mucho Excel y estuvimos haciendo <em>Scratch</em> que sirve para poner comandos y hacer un minijuego. Todo esto nos lo enseñó <strong>Laura</strong>.</p>
+                <div class="highlight-box">
+                    <h3>OACE</h3>
+                    <p>Luego en <strong>OACE</strong> estamos haciendo mucho Excel y estuvimos haciendo Scratch, que sirve para poner comandos y hacer un minijuego. Todo esto nos lo enseñó <strong>Laura</strong>.</p>
                 </div>
 
                 <p>Esas son las asignaturas más importantes.</p>
 
-                <p>En el recreo a veces nos vamos para el Dia a comprar y luego entramos a clase tras el recreo. Y ya luego pillamos un bus para irnos para casita.</p>
+                <p>En el recreo a veces nos vamos para el Dia a comprar y luego entramos al recreo. Y ya luego pillamos un bus para irnos para casita.</p>
             </div>
         </article>
     </main>
