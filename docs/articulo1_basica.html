@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Cómo es una clase en FPB? | IES Newton Salas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #232d29;
+            --bg-header: #1b2320;
+            --bg-card: #1c2522;
+            --text-primary: #ffffff;
+            --text-secondary: #9da8a4;
+            --accent-coral: #e07a5f;
+            --font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            font-family: var(--font-family);
+            line-height: 1.6;
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: var(--bg-header);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-badge {
+            background-color: #ffffff;
+            color: #000000;
+            font-weight: 700;
+            font-size: 0.65rem;
+            line-height: 1.1;
+            padding: 4px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            font-size: 0.9rem;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .logo-text span {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        nav {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 0.4rem 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-color: #ffffff;
+        }
+
+        .erasmus-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .flag-eu {
+            width: 24px;
+            height: 16px;
+            background-color: #003399;
+            border-radius: 2px;
+            position: relative;
+        }
+
+        /* Hero Banner */
+        .hero {
+            position: relative;
+            height: 380px;
+            background: linear-gradient(to right, rgba(27, 35, 32, 0.9), rgba(27, 35, 32, 0.4)), 
+                        url('https://podcast.erasmusiesnewtonsalas.blog/img/fachada.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: flex-end;
+            padding: 3rem 4rem;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .subtitle-tag {
+            color: var(--accent-coral);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle-tag::before {
+            content: "•";
+            font-size: 1.2rem;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.15;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--accent-coral);
+            font-weight: 400;
+        }
+
+        /* Main Content Container */
+        main {
+            max-width: 800px;
+            margin: -2rem auto 4rem;
+            position: relative;
+            z-index: 10;
+            padding: 0 1.5rem;
+        }
+
+        .article-card {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .article-content p {
+            font-size: 1.05rem;
+            color: #d1d5db;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-section {
+            background-color: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid var(--accent-coral);
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-section strong {
+            color: var(--text-primary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .hero {
+                height: 280px;
+                padding: 2rem 1.5rem;
+            }
+            .hero-title {
+                font-size: 2rem;
+            }
+            .article-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <div class="logo-badge">IES<br>NEWTON<br>SALAS</div>
+            <div class="logo-text">
+                <span>IES</span>
+                Newton Salas
+            </div>
+        </div>
+        <nav>
+            <a href="#" class="nav-link active">Inicio</a>
+            <a href="#" class="nav-link">Episodios</a>
+            <a href="#" class="nav-link">El podcast</a>
+        </nav>
+        <div class="erasmus-badge">
+            <div class="flag-eu"></div>
+            Erasmus+
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="subtitle-tag">IES Newton Salas</div>
+            <h1 class="hero-title">¿Cómo es una clase <em>en FPB?</em></h1>
+        </div>
+    </section>
+
+    <main>
+        <article class="article-card">
+            <div class="article-content">
+                <p>Yo me levanto, me ducho, desayuno, y me voy hacia el bus (voy con un colega pero siempre se queda dormido). Voy a primera en bus, nos reímos un rato en clase, xq hay muy buen rollito en clase.</p>
+
+                <div class="highlight-section">
+                    <p>Luego en <strong>Redes</strong> hacemos unos trabajos (sin AI), solemos estar muuucho tiempo en <em>Packet Tracer</em>, es una aplicación principalmente para conectar ordenadores, switch, routers etc... todo esto nos lo enseñó <strong>Elisa</strong>.</p>
+                </div>
+
+                <div class="highlight-section">
+                    <p>Luego en <strong>OACE</strong> estamos haciendo mucho Excel y estuvimos haciendo <em>Scratch</em> que sirve para poner comandos y hacer un minijuego. Todo esto nos lo enseñó <strong>Laura</strong>.</p>
+                </div>
+
+                <p>Esas son las asignaturas más importantes.</p>
+
+                <p>En el recreo a veces nos vamos para el Dia a comprar y luego entramos a clase tras el recreo. Y ya luego pillamos un bus para irnos para casita.</p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; IES Newton Salas - Proyecto Podcast FPB</p>
+    </footer>
+
+</body>
+</html>
